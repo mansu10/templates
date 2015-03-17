@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.3.0/css/font-awesome.min.css">
+
+	</head>
+	<body>
+		<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+
+}
+a{text-decoration: none;}
+body{
+	background: #ddd;overflow-y:scroll; 
+	/*min-width: 101%;*/
+}
+/*侧面导航*/
+.accordion{
+	margin: 0 auto;
+	width: 300px;
+	background: #fff;
+	border: 1px solid #ddd;
+	margin-top: 50px;
+	border-radius: 3px;
+}
+.accordion .link{
+	cursor: pointer;
+	display: block;
+	padding: 15px;
+	padding-left:40px; 
+	color: #4d4d4d;
+	font-size: 14px;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+	line-height: 20px;
+	transition:all .4s ease;
+}
+
+.accordion li span{
+	position: absolute;
+	top: 16px;
+	left: 12px;
+	font-size: 18px;
+	color: #595959;
+	transition: all .4s;
+}
+.accordion li span.fa-chevron-down{
+	right: 12px;
+	left: auto;
+	font-size: 16px;
+}
+.accordion li.open span.fa-chevron-down{
+	color: #b63b4d;
+}
+.accordion li.open span.fa-chevron-down{
+	transform: rotate(180deg);
+}
+.submenu{
+	display: none;
+	background: #444359;
+}
+.submenu li{
+	border-bottom: 1px solid #4b4a5e;
+}
+.submenu a{
+	display: block;
+	color: #d9d9d9;
+	padding: 12px;
+	transition: all .4s ease;
+}
+.submenu a:hover{
+	text-decoration: none;
+	background: #b63b4d;
+
+}
+		</style>
+		<!-- 侧面导航 -->
+		<section id="side-nav">
+			<ul id="accordion" class="accordion">
+				<li>
+					<div class="link"><span class="fa fa-user"></span>text<span class="fa fa-chevron-down"></span></div>
+					<ul class="submenu">
+						<li><a href="#">sub1</a></li>
+						<li><a href="#">sub2</a></li>
+						<li><a href="#">sub3</a></li>
+						<li><a href="#">sub4</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="link"><span class="fa fa-user"></span>text<span class="fa fa-chevron-down"></span></div>
+					<ul class="submenu">
+						<li><a href="#">sub1</a></li>
+						<li><a href="">sub2</a></li>
+						<li><a href="">sub3</a></li>
+						<li><a href="">sub4</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="link"><span class="fa fa-user"></span>text<span class="fa fa-chevron-down"></span></div>
+					<ul class="submenu">
+						<li><a href="#">sub1</a></li>
+						<li><a href="">sub2</a></li>
+						<li><a href="">sub3</a></li>
+						<li><a href="">sub4</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="link"><span class="fa fa-user"></span>text<span class="fa fa-chevron-down"></span></div>
+					<ul class="submenu">
+						<li><a href="#">sub1</a></li>
+						<li><a href="">sub2</a></li>
+						<li><a href="">sub3</a></li>
+						<li><a href="">sub4</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="link"><span class="fa fa-user"></span>text<span class="fa fa-chevron-down"></span></div>
+					<ul class="submenu">
+						<li><a href="#">sub1</a></li>
+						<li><a href="">sub2</a></li>
+						<li><a href="">sub3</a></li>
+						<li><a href="">sub4</a></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+		<script type="text/javascript" src="jquery-1.11.2.js"></script>
+		<script type="text/javascript">
+		(function(el){
+				var accordion = $(""+el+"");
+				
+				var links = accordion.find('.link');
+				links.on('click',function(){
+					next = $(this).next();
+					next.slideToggle();
+					$(this).parent().toggleClass('open');
+
+					accordion.find('.submenu').not(next).slideUp().parent().removeClass('open');
+
+				});
+			})('#accordion');
+		</script>
+	</body>
+</html>		
