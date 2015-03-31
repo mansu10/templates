@@ -101,6 +101,8 @@ img{
 
 
 			var count = 0;
+			var timer2 = setInterval(toRun,3000);
+
 				for(var i=0;i<obtn.length;i++){
 					obtn[i].onClick = function(){
 						count = i;
@@ -108,7 +110,7 @@ img{
 			}
 
 
-			setInterval(toRun,3000);
+			
 
 			function toRun(){
 				
